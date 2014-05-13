@@ -1,30 +1,24 @@
 #!/usr/bin/Rscript
+
+source("corr.R")
 source("complete.R")
-complete("specdata", 1)
 
-##   id nobs
-## 1  1  117
+cr <- corr("specdata", 5000)
+summary(cr)
 
-complete("specdata", c(2, 4, 8, 10, 12))
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## 
 
-##   id nobs
-## 1  2 1041
-## 2  4  474
-## 3  8  192
-## 4 10  148
-## 5 12   96
+length(cr)
 
-complete("specdata", 30:25)
+## [1] 0
 
-##   id nobs
-## 1 30  932
-## 2 29  711
-## 3 28  475
-## 4 27  338
-## 5 26  586
-## 6 25  463
+cr <- corr("specdata")
+summary(cr)
 
-complete("specdata", 3)
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -1.0000 -0.0528  0.1070  0.1370  0.2780  1.0000
 
-##   id nobs
-## 1  3  243
+length(cr)
+
+## [1] 323

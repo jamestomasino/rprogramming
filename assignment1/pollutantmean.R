@@ -15,5 +15,5 @@ pollutantmean <- function(directory, pollutant, id=1:332) {
 		dat <- read.csv(path, header=TRUE)
 		mergedata <- rbind(mergedata, dat)
 	}
-	mean( mergedata[,pollutant], na.rm=T)
+	return(mean( mergedata[,pollutant], na.rm=T))
 }

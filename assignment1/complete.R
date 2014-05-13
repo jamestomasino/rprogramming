@@ -20,5 +20,5 @@ complete <- function(directory, id = 1:332) {
 		df <- rbind(df, c(i, sum(complete.cases(dat))))
 	}
 	names(df) <- c('id','nobs')
-	df
+	return(df)
 }
